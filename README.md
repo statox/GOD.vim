@@ -6,7 +6,7 @@ Get online doc link directly from vim
 
 This plugin helps you to help people!
 
-You are writting something about Vim on a site which handles markdown language *(like [vi.se](https://vi.stackexchange.com) or [/r/vim](https://reddit.com/r/vim) or even a github Readme file like this one)*, you want to direct your readers to a page of Vim doc?
+You are writting something about Vim on a site which handles markdown language *(like [vi.se](https://vi.stackexchange.com) or [/r/vim](https://reddit.com/r/vim) or even a github Readme file like this one)* and you want to direct your readers to a page of Vim doc?
 
 Simply use the command `:GOD {help-topic}` to get in your clipboard a markdown string allowing you to link to the http://vimhelp.appspot.com/ online help.
 
@@ -22,7 +22,7 @@ Will put in your clipboard the following string:
 
     [`:h holy-grail`](http://vimhelp.appspot.com/index.txt.html#holy%2dgrail)
     
-Which will appears like this for your users:
+Which will appears like this for your readers:
 
 [`:h holy-grail`](http://vimhelp.appspot.com/index.txt.html#holy%2dgrail)
 
