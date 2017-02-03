@@ -1,0 +1,54 @@
+*GOD.vim* Get Online Doc: easily get links to vim online doc
+>
+   ____    ___    ____       __     __  ___   __  __ 
+  / ___|  / _ \  |  _ \      \ \   / / |_ _| |  \/  |
+ | |  _  | | | | | | | |      \ \ / /   | |  | |\/| |
+ | |_| | | |_| | | |_| |  _    \ V /    | |  | |  | |
+  \____|  \___/  |____/  (_)    \_/    |___| |_|  |_|
+<
+
+GOD.vim                                                               *GOD.txt*
+
+1. Introduction                                                     |GOD-intro|
+2. Usage                                                            |GOD-usage|
+3. About                                                            |GOD-about|
+
+==============================================================================
+1. Introduction                                                     *GOD-intro*
+
+GOD.vim stands for Get Online Doc.
+
+This plugin allows you to easily get a link to online doc to post of sites
+like vi.stackexchange.com or reddit.com
+
+This plugin takes a Vim help tag, generate a markdown formatted link to the
+corresponding page on https://vimhelp.appspot.com and puts this link in your
+clipboard.
+
+==============================================================================
+2. GOD Usage                                               *GOD-usage* *:GOD* *GOD*
+
+
+:GOD {tag}           Generates a link to the online page corresponding to the
+                     page `:help {tag}`. You'll get in your clipboard register
+                     a link of the following form:
+                     >
+            [`:h {tag}`](http://vimhelp.appspot.com/{helpfile}.html#{helptag}
+<
+
+==============================================================================
+3. About GOD                                                        *GOD-about*
+
+This plugin was inspired by this question on the site vi.stackexchange.com:
+    http://vi.stackexchange.com/q/7348/1841
+
+The sources of the plugin are available on github:
+    http://github.com/statox/GOD.vim
+
+The plugin is distributed under the MIT license. See the LICENSE file which
+comes with the plugin, or here:
+    https://opensource.org/licenses/MIT
+
+Thanks to Carpetsmoker https://arp242.net/ for his help with url encoding.
+
+vim:tw=78:ts=8:ft=help:norl:
