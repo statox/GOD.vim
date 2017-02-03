@@ -40,7 +40,7 @@ clipboard.
 3. About GOD                                                        *GOD-about*
 
 This plugin was inspired by this question on the site vi.stackexchange.com:
-    http://vi.stackexchange.com/q/7348/1841
+    http://vi.stackexchange.com/q/4346/1841
 
 The sources of the plugin are available on github:
     http://github.com/statox/GOD.vim
