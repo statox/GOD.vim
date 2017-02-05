@@ -7,15 +7,15 @@
   \____|  \___/  |____/  (_)    \_/    |___| |_|  |_|
 <
 
-GOD.vim                                                               *GOD.txt*
+GOD.vim                                                           *GOD.txt*
 
-1. Introduction                                                     |GOD-intro|
-2. Usage                                                            |GOD-usage|
-3. GOD configuration                                        |GOD-configuration|
-4. About                                                            |GOD-about|
+1. Introduction                                                 |GOD-intro|
+2. Usage                                                        |GOD-usage|
+3. GOD configuration                                    |GOD-configuration|
+4. About                                                        |GOD-about|
 
 ==============================================================================
-1. Introduction                                                     *GOD-intro*
+1. Introduction                                                 *GOD-intro*
 
 GOD.vim stands for Get Online Doc.
 
@@ -27,9 +27,7 @@ corresponding page on https://vimhelp.appspot.com and puts this link in your
 clipboard.
 
 ==============================================================================
-2. GOD Usage                                               *GOD-usage* *:GOD* *GOD*
-
-
+2. GOD Usage                                          *GOD-usage* *:GOD* *GOD*
 :GOD {tag}
             Generates a link to the online page corresponding to the page
             `:help {tag}`. You'll get in your clipboard register a link of the
@@ -48,7 +46,7 @@ clipboard.
 <
 
 ==============================================================================
-3. GOD configuration                                       *GOD-configuration*
+3. GOD configuration                                    *GOD-configuration*
 
 
 To disable the plugin you can put the following line in your `vimrc`:
@@ -64,7 +62,7 @@ If you don't want to see it, you can add the following line to your `vimrc`:
 <
 
 ==============================================================================
-4. About GOD                                                        *GOD-about*
+4. About GOD                                                    *GOD-about*
 
 This plugin was inspired by this question on the site vi.stackexchange.com:
     http://vi.stackexchange.com/q/4346/1841
@@ -78,4 +76,4 @@ comes with the plugin, or here:
 
 Thanks to [Carpetsmoker](https://arp242.net/) for his help with url encoding.
 
-vim:tw=78:ts=8:ft=help:norl:
+vim:tw=75:ts=8:ft=help:norl:
