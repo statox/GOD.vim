@@ -18,27 +18,38 @@ endif
 " }}}
 " Functions {{{
 " Get a link to the online page of an help tag
-function! s:GetOnlineDoc(string) abort
-    " Open the specified help tag
-    execute "help " . a:string
+function! s:GetOnlineDoc(...) abort
+    let l:result = ''
 
-    " Forge the link
-    let l:file        = expand("%:t")
-    let l:tag         = expand('<cword>')
-    let l:tagEncoded  = <SID>URLEncode(tag)
-    let l:link        = "[`:h ". l:tag ."`](http://vimhelp.appspot.com/". l:file .".html#". l:tagEncoded .")"
+    for topic in a:000
+        " Open the specified help tag
+        execute "help " . topic
+
+        " Forge the link
+        let l:file        = expand("%:t")
+        let l:tag         = expand('<cword>')
+        let l:tagEncoded  = <SID>URLEncode(tag)
+        let l:link        = "[`:h ". l:tag ."`](http://vimhelp.appspot.com/". l:file .".html#". l:tagEncoded .")"
+
+        " Optional, close the opened help file
+        if s:god_close_help_buffer
+            execute "bd"
+        endif
+
+        if len(a:000) == 1
+            let l:result = l:link
+        else
+            let l:result = l:result . " - " . l:link . "\n"
+        endif
+    endfor
 
     " Put it in the clipboard register
     if has('win32')
-        let @* = l:link
+        let @* = l:result
     else
-        let @+ = l:link
+        let @+ = l:result
     endif
 
-    " Optional, close the opened help file
-    if s:god_close_help_buffer
-        execute "bd"
-    endif
 endfunction
 
 " Encode url
@@ -60,6 +71,6 @@ function! s:URLEncode(str) abort
 endfun
 " }}}
 " Command {{{
-command! -nargs=1 -complete=help GOD call <SID>GetOnlineDoc(<f-args>)
+command! -nargs=+ -complete=help GOD call <SID>GetOnlineDoc(<f-args>)
 " }}}
 " vim:fdm=marker
