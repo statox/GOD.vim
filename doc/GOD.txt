@@ -11,7 +11,8 @@ GOD.vim                                                               *GOD.txt*
 
 1. Introduction                                                     |GOD-intro|
 2. Usage                                                            |GOD-usage|
-3. About                                                            |GOD-about|
+3. GOD configuration                                        |GOD-configuration|
+4. About                                                            |GOD-about|
 
 ==============================================================================
 1. Introduction                                                     *GOD-intro*
@@ -29,15 +30,41 @@ clipboard.
 2. GOD Usage                                               *GOD-usage* *:GOD* *GOD*
 
 
-:GOD {tag}           Generates a link to the online page corresponding to the
-                     page `:help {tag}`. You'll get in your clipboard register
-                     a link of the following form:
-                     >
-            [`:h {tag}`](http://vimhelp.appspot.com/{helpfile}.html#{helptag}
+:GOD {tag}
+            Generates a link to the online page corresponding to the page
+            `:help {tag}`. You'll get in your clipboard register a link of the
+            following form:
+ >
+       [`:h {tag}`](http://vimhelp.appspot.com/{helpfile}.html#{helptag}
+<
+
+:GOD {tag1} {tag2} ...
+            Generates a list of links in the markdown format. you'll get in
+            your clipboard refister a list of the following form:
+ >
+       - [`:h {tag1}`](http://vimhelp.appspot.com/{helpfile1}.html#{helptag1}
+       - [`:h {tag2}`](http://vimhelp.appspot.com/{helpfile2}.html#{helptag2}
+       ...
 <
 
 ==============================================================================
-3. About GOD                                                        *GOD-about*
+3. GOD configuration                                       *GOD-configuration*
+
+
+To disable the plugin you can put the following line in your `vimrc`:
+
+>
+    let g:loaded_god_vim = 1
+<
+When you use the `:GOD` command, the corresponding help buffer will be open.
+If you don't want to see it, you can add the following line to your `vimrc`:
+
+>
+    let g:god_close_help_buffer = 1
+<
+
+==============================================================================
+4. About GOD                                                        *GOD-about*
 
 This plugin was inspired by this question on the site vi.stackexchange.com:
     http://vi.stackexchange.com/q/4346/1841
@@ -49,6 +76,6 @@ The plugin is distributed under the MIT license. See the LICENSE file which
 comes with the plugin, or here:
     https://opensource.org/licenses/MIT
 
-Thanks to Carpetsmoker https://arp242.net/ for his help with url encoding.
+Thanks to [Carpetsmoker](https://arp242.net/) for his help with url encoding.
 
 vim:tw=78:ts=8:ft=help:norl:
