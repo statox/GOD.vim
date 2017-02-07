@@ -10,11 +10,7 @@ endif
 
 let loaded_god_vim = 1
 
-if exists("g:god_close_help_buffer")
-    let s:god_close_help_buffer = 1
-else
-    let s:god_close_help_buffer = 0
-endif
+let s:god_close_help_buffer = get(g:, 'god_close_help_buffer', 0)
 " }}}
 " Functions {{{
 " Get a link to the online page of an help tag
