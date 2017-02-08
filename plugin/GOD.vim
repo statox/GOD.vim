@@ -51,18 +51,7 @@ endfunction
 " Encode url
 function! s:URLEncode(str) abort
     " Replace each non hex character of the string by its hex representation
-    let l:new = ''
-
-    for l:i in range(1, strlen(a:str))
-        let l:c = a:str[l:i - 1]
-
-        if l:c =~ '\w'
-            let l:new .= l:c
-        else
-            let l:new .= printf('%%%02x', char2nr(l:c))
-        endif
-    endfor
-
+    let l:new = join(map(range(0, strlen(a:str)-1), 'a:str[v:val] =~ "\\w" ? a:str[v:val] : printf("%%%02x", char2nr(a:str[v:val]))'), '')
     return l:new
 endfun
 " }}}
