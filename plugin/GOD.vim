@@ -58,4 +58,4 @@ endfun
 " Command {{{
 command! -nargs=+ -complete=help GOD call <SID>GetOnlineDoc(<f-args>)
 " }}}
-" vim:fdm=marker
+" vim:fdm=marker:sw=4:
