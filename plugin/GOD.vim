@@ -10,15 +10,12 @@ endif
 
 let loaded_god_vim = 1
 
-if exists("g:god_close_help_buffer")
-    let s:god_close_help_buffer = 1
-else
-    let s:god_close_help_buffer = 0
-endif
 " }}}
 " Functions {{{
 " Get a link to the online page of an help tag
 function! s:GetOnlineDoc(...) abort
+    let l:god_close_help_buffer = get(g:, 'god_close_help_buffer', 0)
+
     let l:result = ''
 
     for topic in a:000
@@ -32,8 +29,8 @@ function! s:GetOnlineDoc(...) abort
         let l:link        = "[`:h ". l:tag ."`](http://vimhelp.appspot.com/". l:file .".html#". l:tagEncoded .")"
 
         " Optional, close the opened help file
-        if s:god_close_help_buffer
-            execute "bd"
+        if l:god_close_help_buffer
+            bd
         endif
 
         if len(a:000) == 1
@@ -55,22 +52,11 @@ endfunction
 " Encode url
 function! s:URLEncode(str) abort
     " Replace each non hex character of the string by its hex representation
-    let l:new = ''
-
-    for l:i in range(1, strlen(a:str))
-        let l:c = a:str[l:i - 1]
-
-        if l:c =~ '\w'
-            let l:new .= l:c
-        else
-            let l:new .= printf('%%%02x', char2nr(l:c))
-        endif
-    endfor
-
+    let l:new = join(map(range(0, strlen(a:str)-1), 'a:str[v:val] =~ "\\w" ? a:str[v:val] : printf("%%%02x", char2nr(a:str[v:val]))'), '')
     return l:new
 endfun
 " }}}
 " Command {{{
 command! -nargs=+ -complete=help GOD call <SID>GetOnlineDoc(<f-args>)
 " }}}
-" vim:fdm=marker
+" vim:fdm=marker:sw=4:
