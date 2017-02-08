@@ -30,7 +30,7 @@ function! s:GetOnlineDoc(...) abort
 
         " Optional, close the opened help file
         if l:god_close_help_buffer
-            execute "bd"
+            bd
         endif
 
         if len(a:000) == 1
