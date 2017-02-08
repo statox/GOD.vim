@@ -10,11 +10,12 @@ endif
 
 let loaded_god_vim = 1
 
-let s:god_close_help_buffer = get(g:, 'god_close_help_buffer', 0)
 " }}}
 " Functions {{{
 " Get a link to the online page of an help tag
 function! s:GetOnlineDoc(...) abort
+    let l:god_close_help_buffer = get(g:, 'god_close_help_buffer', 0)
+
     let l:result = ''
 
     for topic in a:000
@@ -28,7 +29,7 @@ function! s:GetOnlineDoc(...) abort
         let l:link        = "[`:h ". l:tag ."`](http://vimhelp.appspot.com/". l:file .".html#". l:tagEncoded .")"
 
         " Optional, close the opened help file
-        if s:god_close_help_buffer
+        if l:god_close_help_buffer
             execute "bd"
         endif
 
