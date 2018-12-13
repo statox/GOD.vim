@@ -12,8 +12,10 @@ let g:loaded_god_vim = 1
 let s:save_cpo = &cpo
 set cpo&vim
 " }}}
-" Command {{{
+" Commands and mappings{{{
 command! -nargs=+ -complete=help GOD call GOD#GetOnlineDoc(<f-args>)
+
+vnoremap <Plug>GODCopyDoc :call GOD#FormatHelpText()<CR>
 " }}}
 " Reset {{{
 let &cpo = s:save_cpo

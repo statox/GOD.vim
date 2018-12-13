@@ -1,0 +1,12 @@
+:GOD	GOD.txt	/*:GOD*
+GOD	GOD.txt	/*GOD*
+GOD-about	GOD.txt	/*GOD-about*
+GOD-configuration	GOD.txt	/*GOD-configuration*
+GOD-intro	GOD.txt	/*GOD-intro*
+GOD-usage	GOD.txt	/*GOD-usage*
+GOD.txt	GOD.txt	/*GOD.txt*
+GOD.vim	GOD.txt	/*GOD.vim*
+GOD_copy_doc	GOD.txt	/*GOD_copy_doc*
+g:god_close_help_buffer	GOD.txt	/*g:god_close_help_buffer*
+g:god_disable_copy_doc_mapping	GOD.txt	/*g:god_disable_copy_doc_mapping*
+g:loaded_god_vim	GOD.txt	/*g:loaded_god_vim*

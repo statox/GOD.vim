@@ -27,7 +27,7 @@ corresponding page on https://vimhelp.appspot.com and puts this link in your
 clipboard.
 
 ==============================================================================
-2. GOD Usage                                          *GOD-usage* *:GOD* *GOD*
+2. GOD Usage                                       *GOD-usage* *:GOD* *GOD*
 :GOD {tag}
             Generates a link to the online page corresponding to the page
             `:help {tag}`. You'll get in your clipboard register a link of the
@@ -45,20 +45,53 @@ clipboard.
        ...
 <
 
+                                                             *GOD_copy_doc*
+
+GOD exposes a mapping to yank text from the doc and format the text to markdown.
+This mapping is only available in the help pages with `<Leader>dy`.
+
+To use it you need to visually select the text you want to format, use the
+mapping and the formatted text will be put in your system clipboard.
+
+If you want to disable this mapping you can set |g:god_disable_copy_doc_mapping|
+to 1 in your vimrc.
+
+You can also redefine the mapping with the following line:
+
+>
+    vmap <your new key> <Plug>GODCopyDoc
+<
+
+Note that you should put this line in a custom |ftplugin| or in a |:autocmd|
+
 ==============================================================================
 3. GOD configuration                                    *GOD-configuration*
 
+                                                         *g:loaded_god_vim*
 
 To disable the plugin you can put the following line in your `vimrc`:
 
 >
     let g:loaded_god_vim = 1
 <
+
+                                                  *g:god_close_help_buffer*
+
 When you use the `:GOD` command, the corresponding help buffer will be open.
 If you don't want to see it, you can add the following line to your `vimrc`:
 
 >
     let g:god_close_help_buffer = 1
+<
+
+                                           *g:god_disable_copy_doc_mapping*
+
+By default GOD creates a mapping on to format the text visually selected from
+the help pages to markdown. The default mapping is `<leader>dy` but you can
+disable is with
+
+>
+    let g:god_disable_copy_doc_mapping = 1
 <
 
 ==============================================================================
@@ -75,5 +108,7 @@ comes with the plugin, or here:
     https://opensource.org/licenses/MIT
 
 Thanks to [Carpetsmoker](https://arp242.net/) for his help with url encoding.
+And to [Luc Hermitte](https://github.com/LucHermitte) for his help on several
+improvements.
 
 vim:tw=75:ts=8:ft=help:norl:
