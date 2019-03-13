@@ -13,7 +13,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 " }}}
 " Command {{{
-command! -nargs=+ -complete=help GOD call GOD#GetOnlineDoc(<f-args>)
+command! -nargs=+ -complete=help GOD call GOD#GetOnlineDoc('vimhelp', <f-args>)
+command! -nargs=+ -complete=help NGOD call GOD#GetOnlineDoc('neovimio', <f-args>)
 " }}}
 " Reset {{{
 let &cpo = s:save_cpo
